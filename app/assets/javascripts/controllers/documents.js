@@ -9,7 +9,7 @@ App.Controllers.Documents = Backbone.Router.extend({
     var doc = new Document({id: id});
     doc.fetch({
       success: function(model, resp){
-        App.Views.Edit({ model: doc });
+        new App.Views.Edit({ model: doc });
       },
       error: function(){
         new Error({ message: 'Could not find that document.' });
