@@ -1,4 +1,4 @@
-//= require controllers/documents
+//= require routers/documents
 //= require models/document
 //= require views/edit
 //= require views/index

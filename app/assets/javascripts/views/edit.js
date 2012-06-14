@@ -24,7 +24,7 @@ App.Views.Edit = Backbone.View.extend({
           self.render();
           self.delegateEvents();
 
-          Backbone.history.navigate('documents/' + model.id);
+          Backbone.history.navigate('', true);
         },
 
         error: function() {
@@ -40,9 +40,10 @@ App.Views.Edit = Backbone.View.extend({
     var out = '<form>';
     out += "<label for='title'>Title</label>";
     out += "<input name='title' type='text' />"
-
+    out += "<br/>"
     out += "<label for='body'>Body</label>";
     out += "<textarea name='body' type='text'>" + (this.model.escape('body') || '') + "</textarea>";
+    out += "<br/>"
 
     var submitText = this.model.isNew() ? 'Create' : 'Save';
 

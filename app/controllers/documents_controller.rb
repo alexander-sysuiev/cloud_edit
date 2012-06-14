@@ -9,12 +9,12 @@ class DocumentsController < ApplicationController
 
   def create
     document = Document.create! params[:document]
-    render :json => document
+    render :json => Document.all
   end
 
   def update
     document = Document.find(params[:id])
-    document.update_attributes! params
-    render :json => document
+    document.update_attributes! params[:document]
+    render :json => Document.all
   end
 end

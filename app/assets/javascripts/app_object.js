@@ -1,8 +1,8 @@
 var App = {
   Views: {},
-  Controllers: {},
+  Routers: {},
   init: function(){
-    new App.Controllers.Documents();
+    new App.Routers.Documents();
     Backbone.history.start();
   }
 }

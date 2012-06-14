@@ -9,8 +9,8 @@ App.Views.Index = Backbone.View.extend({
       var out ="<h3><a href='#new'>Create new</a></h3><ul>";
       _(this.documents).each(function(item) {
         out += "<li><a href='#documents/" + item.id + "'>" + item.escape('title') + "</a></li>";
-        out += "</ul>";
       });
+      out += "</ul>";
     } else {
       out = "<h3>No documents!<a href='#new'>Create one</a></h3>";
     }
