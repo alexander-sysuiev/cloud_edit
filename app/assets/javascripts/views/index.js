@@ -1,6 +1,6 @@
 App.Views.Index = Backbone.View.extend({
   initialize: function() {
-    this.documents = this.options.documents;
+    this.documents = this.options.collection.models;
     this.render();
   },
 

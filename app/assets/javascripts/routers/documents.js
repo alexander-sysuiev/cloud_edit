@@ -19,11 +19,13 @@ App.Routers.Documents = Backbone.Router.extend({
   },
 
   index: function(){
-    $.getJSON('/documents', function(data){
-      if(data) {
-        var documents = _(data).map(function(i){ return new Document(i) });
-        new App.Views.Index({ documents: documents });
-      } else {
+    var documents = new App.Collections.Documents();
+    documents.fetch({
+      success: function() {
+        new App.Views.Index({ collection: documents });
+      },
+
+      error: function() {
         new Error({message: 'Error loading documents'});
       }
     });
