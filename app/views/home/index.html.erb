@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'index_page' %>
 <h1><a href="#">CloudEdit tutorial</a></h1>
 <h2>Backbone.js Rails example by Alexander</h2>
 <div id="notice"></div>
@@ -16,9 +17,3 @@
 <script id="index" type='text/template'>
   <%= render "../templates/documents/index.mustache" %>
 </script>
-
-<% ['index_item'].each do |partial| %>
-  <script id="<%= partial %>" class='partial' type='text/template'>
-    <%= render "../templates/documents/#{partial}.mustache" %>
-  </script>
-<% end %>
