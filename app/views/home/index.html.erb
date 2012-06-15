@@ -8,3 +8,17 @@
     App.init();
   });
 </script>
+
+<script id="edit" type='text/template'>
+  <%= render "../templates/documents/edit.mustache" %>
+</script>
+
+<script id="index" type='text/template'>
+  <%= render "../templates/documents/index.mustache" %>
+</script>
+
+<% ['index_item'].each do |partial| %>
+  <script id="<%= partial %>" class='partial' type='text/template'>
+    <%= render "../templates/documents/#{partial}.mustache" %>
+  </script>
+<% end %>
