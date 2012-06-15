@@ -10,10 +10,8 @@
   });
 </script>
 
-<script id="edit" type='text/template'>
-  <%= render "../templates/documents/edit.mustache" %>
-</script>
-
-<script id="index" type='text/template'>
-  <%= render "../templates/documents/index.mustache" %>
-</script>
+<% ['edit', 'index'].each do |template| %>
+  <script id="<%= template %>" type='text/template'>
+    <%= render "../templates/documents/#{template}.mustache" %>
+  </script>
+<% end %>
