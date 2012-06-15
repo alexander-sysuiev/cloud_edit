@@ -4,6 +4,8 @@ App.Views.Edit = Backbone.View.extend({
   },
 
   initialize: function(){
+    _.bindAll(this, 'render');
+    this.model.bind('change', this.render);
     this.render();
   },
 
@@ -11,27 +13,14 @@ App.Views.Edit = Backbone.View.extend({
     var self = this;
     var msg = this.model.isNew() ? 'Successfully created!' : 'Saved!';
     this.model.save(
-      {
-        title: this.$('[name=title]').val(),
-        body: this.$('[name=body]').val()
-      },
+      { title: this.$('[name=title]').val(), body: this.$('[name=body]').val() },
       {
         success: function(model, resp) {
-          // new App.Views.Notice({message: msg});
-
-          self.model = model;
-          self.render();
-          self.delegateEvents();
-
           Backbone.history.navigate('', true);
         },
-
-        error: function() {
-          // new App.Views.Error();
-        }
       }
     );
-    
+
     return false;
   },
 
